@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# U Blanickych rytiru (first version)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+First version of the website for U Blanickych rytiru, the restaurant in Vlasim castle. This build is live at [modern-metro-restaurant-site.vercel.app](https://modern-metro-restaurant-site.vercel.app).
 
-Currently, two official plugins are available:
+The current site is a separate Next.js project running at [www.urytiruvlasim.cz](https://www.urytiruvlasim.cz).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The site is in Czech with an English version under `/en`.
 
-## Expanding the ESLint configuration
+## Pages
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `/`: hero with opening hours, featured dishes, about, gallery, reviews, call to action, contact
+- `/menu`: full menu with search and sort by price
+- `/gallery`: photo gallery with image modal
+- `/contact`: contact details and embedded Google Map
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Each page also exists under `/en` (for example `/en/menu`).
+
+## Stack
+
+- React 19, TypeScript, Vite 6
+- React Router 7
+- i18next with react-i18next (Czech and English)
+- Tailwind CSS 4, Motion, Lucide icons
+
+## Getting started
+
+```bash
+bun install      # or npm install
+bun run dev      # or npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Other scripts:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run build    # type-check and build to dist/
+npm run preview
+npm run lint
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+No environment variables are needed.
+
+## Project structure
+
+```
+src/pages/          route pages: Home, Menu, Gallery, Contact
+src/components/     sections, navigation, language switcher and router
+src/i18n/locales/   cs.json and en.json with all site text
+public/             restaurant photos and logo
 ```
