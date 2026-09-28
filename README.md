@@ -1,6 +1,6 @@
 # U Blanickych rytiru (first version)
 
-First version of the website for U Blanickych rytiru, the restaurant in Vlasim castle. This build is live at [urytiruvlasim-cz-v1.vercel.app](https://urytiruvlasim-cz-v1.vercel.app).
+First version of the website for U Blanickych rytiru, the restaurant in Vlasim castle. This build is live at [urytiruvlasim-v1.vercel.app](https://urytiruvlasim-v1.vercel.app).
 
 The current site is a separate Next.js project running at [www.urytiruvlasim.cz](https://www.urytiruvlasim.cz).
 

@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "urytiruvlasim-cz-v1",
+      "name": "urytiruvlasim-v1",
       "dependencies": {
         "@tailwindcss/vite": "^4.1.10",
         "framer-motion": "^12.18.1",
